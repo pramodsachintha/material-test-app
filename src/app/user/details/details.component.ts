@@ -13,12 +13,11 @@ export class DetailsComponent implements OnInit {
   userModel: User;
 
   constructor(private fb: FormBuilder) {
-    this.userModel = new User('', '', '', '', new Date());
-    this.setFormControls();
   }
 
   ngOnInit() {
-    // this.userDetailsForm = this.fb.group(this.userModel);
+    this.userModel = new User('', '', '', '', new Date());
+    this.setFormControls();
   }
 
   submit = () => {
