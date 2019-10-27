@@ -1,0 +1,68 @@
+<div>
+  <h1>User Details</h1>
+  <form [formGroup]="userDetailsForm">
+    <div fxLayout="row">
+      <div fxFlexOffset="10" fxFlex="70">
+        <mat-form-field class="example-full-width">
+          <mat-label>User Name</mat-label>
+          <input formControlName='username' matInput placeholder="User Name">
+          <mat-error *ngIf="userDetailsForm.controls.username?.errors && userDetailsForm.controls.username?.touched">
+            Please enter a valid username
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlexOffset="10" fxFlex="70">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email">
+          <mat-error *ngIf="userDetailsForm.controls.email?.errors && userDetailsForm.controls.email?.touched">
+            Please enter a valid Email Address
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlexOffset="10" fxFlex="70">
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="Password" type="password">
+          <mat-error *ngIf="userDetailsForm.controls.password?.errors && userDetailsForm.controls.password?.touched">
+            Please enter a valid Password
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlexOffset="10" fxFlex="70">
+        <mat-form-field class="example-full-width">
+          <mat-label>Age</mat-label>
+          <input formControlName="age" matInput placeholder="Age">
+          <mat-error *ngIf="userDetailsForm.controls.age?.errors && userDetailsForm.controls.age?.touched">
+            Please enter a valid Age
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlexOffset="10" fxFlex="70">
+        <mat-form-field class="example-full-width">
+          <mat-label>Select a Date</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="userDetailsForm.controls.date?.errors">
+            Please enter a valid date
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div fxLayout="row">
+  <div fxFlexOffset="10" fxFlex="70" fxLayoutAlign="end">
+    <button color="accent" mat-raised-button (click)="submit()">Save</button>
+  </div>
+</div>
